@@ -159,7 +159,7 @@ def ex04():
 # 密码同样是数字 - 就从0开始,数字增加
 # 途中 弄错了字段，默默的抓狂了好久的哦，最后发现是 captcha_0 字段错了，巨坑啊
 # 多了一个验证码，有时候验证码也会识别错误，所以说，同一个数字就多几次识别验证码
-# 答案是11
+# p11
 # url: http://www.heibanke.com/lesson/crawler_ex04/
 def VerificationCode(imgurl):
     # 保存验证码
