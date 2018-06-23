@@ -16,6 +16,15 @@ from PIL import Image,ImageEnhance
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+# 获取csrf值
+def getcsrf():
+    url = 'http://www.heibanke.com/lesson/crawler_ex01/'
+    res = requests.get(url,timeout=30).text
+    tree = etree.HTML(res)
+    csrf = tree.xpath('/html/body/div/div/div[2]/form/input/@value')[0]
+    return csrf
+
+
 # 登录 
 # 3,4,5都需要登录
 # url: http://www.heibanke.com/accounts/login
@@ -60,6 +69,7 @@ def ex01():
 # 密码是30以内，所以我就没把30放在考虑范围内，就是0-29
 # url: http://www.heibanke.com/lesson/crawler_ex01/
 def ex02():
+    scrf = getcsrf()
     url = 'http://www.heibanke.com/lesson/crawler_ex01/'
     data = {
     "csrfmiddlewaretoken": "8BiM322tV4hbOEO90cSHJXjFw5HDFXEq",
