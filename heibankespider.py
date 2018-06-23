@@ -72,7 +72,7 @@ def ex02():
     scrf = getcsrf()
     url = 'http://www.heibanke.com/lesson/crawler_ex01/'
     data = {
-    "csrfmiddlewaretoken": "8BiM322tV4hbOEO90cSHJXjFw5HDFXEq",
+    "csrfmiddlewaretoken": str(scrf),
     "username": "a",
     "password": "1"
     }
